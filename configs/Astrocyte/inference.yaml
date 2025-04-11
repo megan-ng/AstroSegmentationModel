@@ -1,0 +1,16 @@
+
+INFERENCE:
+  IMAGE_NAME: "/home/meganng/scratch/ModelInputs/TestData.tif"
+  OUTPUT_PATH: "/home/meganng/scratch/ModelOutputs"
+  OUTPUT_NAME: "prediction.tif"
+  IS_ABSOLUTE_PATH: True
+
+  # DO_SINGLY: True Ctrl + f documentation for more info
+
+  INPUT_SIZE: [16, 256, 256]
+  OUTPUT_SIZE: [16, 256, 256]
+  OUTPUT_ACT: ["sigmoid"]
+  AUG_MODE: mean
+  AUG_NUM: 16
+  STRIDE: [8,128,128]
+  SAMPLES_PER_BATCH: 8

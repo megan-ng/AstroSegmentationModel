@@ -1,0 +1,16 @@
+INFERENCE:
+  # CHANGE TO YOUR PATHS
+  IMAGE_NAME: /home/meganng/projects/def-siddiqi/meganng/SegmentationModel/data/subV4(600-730).tif
+  OUTPUT_PATH: /home/meganng/scratch/ModelOutputs
+  OUTPUT_NAME: V4_prediction.tif
+
+  IS_ABSOLUTE_PATH: True
+  INPUT_SIZE: [16, 256, 256]
+  OUTPUT_SIZE: [16, 256, 256]
+  OUTPUT_ACT: ["sigmoid"]
+  
+  PAD_SIZE: [8, 28, 28]
+  AUG_MODE: mean
+  AUG_NUM: 16
+  STRIDE: [8,128,128]
+  SAMPLES_PER_BATCH: 8

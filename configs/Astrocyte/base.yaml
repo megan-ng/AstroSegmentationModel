@@ -1,0 +1,62 @@
+SYSTEM:
+  NUM_GPUS: 1
+  NUM_CPUS: 4
+
+AUGMENTOR:
+  ENABLED: True
+  SMOOTH: False # Are others by default set to True? or no preprocessing
+  ELASTIC:
+    ENABLED: True
+  RESCALE:
+    ENABLED: True
+    P: 0.5
+  FLIP:
+    ENABLED: True
+  GRAYSCALE:
+    ENABLED: True
+  ROTATE:
+    ENABLED: True
+    ROT90: True
+
+DATASET:
+  OUTPUT_PATH: /home/meganng/scratch/bootcamp/
+  VAS_LOGGER_ABS_PATH: /home/meganng/models/ConnectomicsPytorch/pytorch_connectomics/outputs/Astrocytes/val
+  IS_ABSOLUTE_PATH: True
+  IMAGE_NAME: 
+    - data/subV1(947-1054).tif
+    - data/subV2(1130-1244).tif 
+    - data/subV3(710-829).tif
+    - data/subV4(600-730).tif
+  LABEL_NAME: 
+    - data/V1_seg.tif
+    - data/V2_seg.tif
+    - data/V3_seg.tif
+    - data/V4_seg.tif
+  DISTRIBUTED: True
+  ENSURE_MIN_SIZE: True
+  NORMALIZE_RANGE: True
+  PAD_SIZE: [0, 0, 0]
+  REJECT_SAMPLING:
+    SIZE_THRES: 10000
+    P: 0.7
+
+MODEL:
+  ARCHITECTURE: unet_3d
+  BLOCK_TYPE: residual_se
+  INPUT_SIZE: [16, 256, 256]
+  OUTPUT_SIZE: [16, 256, 256]
+  IN_PLANES: 1
+  OUT_PLANES: 1
+  LOSS_OPTION: [["WeightedBCEWithLogitsLoss", "DiceLoss"]]
+  LOSS_WEIGHT: [[1.0, 0.5]]
+  OUTPUT_ACT: [["none", "sigmoid"]]
+  WEIGHT_OPT: [['1', '0']]
+  NORM_MODE: sync_bn  #what is in stands for? 
+  
+SOLVER:
+  LR_SCHEDULER_NAME: WarmupCosineLR
+  BASE_LR: 0.02
+  ITERATION_STEP: 1
+  ITERATION_SAVE: 25000
+  ITERATION_TOTAL: 125000
+  SAMPLES_PER_BATCH: 2

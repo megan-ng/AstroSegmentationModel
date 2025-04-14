@@ -1,0 +1,12 @@
+MODEL:
+  REGU_OPT: ["Curvature_min"]
+  REGU_TARGET: [[0]] #[[0]] means, takes the first output for the first regularizer 
+  REGU_WEIGHT: [20]
+  
+DATASET:
+  DATA_SCALE: [1.,0.7,0.7]
+  OUTPUT_PATH: /home/meganng/scratch/bootcamp
+INFERENCE:
+  OUTPUT_PATH: /home/meganng/scratch/bootcamp
+  OUTPUT_NAME: min20.tif
+

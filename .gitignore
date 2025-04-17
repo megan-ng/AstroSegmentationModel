@@ -115,7 +115,7 @@ dmypy.json
 
 # data
 *.h5
-*.sh
+# *.sh --> commented out because we DO want bash files to be included in git add's
 ._*
 .DS_Store
 *.pth

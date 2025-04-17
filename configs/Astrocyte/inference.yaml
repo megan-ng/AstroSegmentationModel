@@ -1,8 +1,8 @@
 INFERENCE:
   # CHANGE TO YOUR PATHS
-  IMAGE_NAME: /home/meganng/projects/def-siddiqi/meganng/SegmentationModel/data/subV4(600-730).tif
-  OUTPUT_PATH: /home/meganng/scratch/ModelOutputs
-  OUTPUT_NAME: V4_prediction.tif
+  IMAGE_NAME: /home/meganng/scratch/Data/TestData.tif
+  OUTPUT_PATH: /home/meganng/scratch/ModelOutputs/Predictions
+  OUTPUT_NAME: TestData_predictions.tif
 
   IS_ABSOLUTE_PATH: True
   INPUT_SIZE: [16, 256, 256]
